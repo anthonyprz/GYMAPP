@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	 <script src="lib/jquery-1.11.2.min.js"></script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>prototipo</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="index.html">Home</a></li>
+			<li><a href="#" onclick="vibrate()">recomendaciones</a></li>
+			<li><a href="#" onclick="vibrate()">ejercicios</a></li>
+			<li><a href="#" onclick="vibrate()">contacto</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+
+
+<script type="text/javascript">
+  function vibrate () {
+    navigator.vibrate(50);
+  }
+//espalda
+	$(document).ready(function() {
+		 $("#espalda").click(function(){
+      $("#carousel").toggle(200);
+
+                
+            
+    }); 
+     $("#dominada").click(function(){
+         $("#idominada").toggle(200);
+          $("#pdominada").toggle(200);
+          //oculta dominada sentado
+             $("#idominadasentado").fadeOut();
+             $("#pdominadasentado").fadeOut();
+              //oculta pecho 
+                
+                 
+    }); 
+
+       $("#dominadasentado").click(function(){
+         $("#idominadasentado").toggle(200);
+          $("#pdominadasentado").toggle(200);
+          //oculta dominada
+             $("#idominada").fadeOut();
+             $("#pdominada").fadeOut();
+             //oculta pecho 
+                
+                
+    }); 
+//pecho
+       $("#pecho").click(function(){
+
+         $("#tpecho").toggle(200);
+          
+    }); 
+          $("#pres").click(function(){
+         $("#ipres").toggle(200);
+         $("#ppres").toggle(200);
+          
+    }); 
+
+	});
+
+</script>
+
+<table>
+<tr>
+<td>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="espalda" onclick="vibrate()">
+  espalda 
+</button>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="pecho" onclick="vibrate()">
+  pecho
+</button>
+
+</td>
+</tr>
+
+</table>
+<!--tabla de espalda -->
+<table hidden border="1" id="carousel">
+  <tr>
+    <td colspan="2">
+      <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="dominada" onclick="vibrate()">
+  dominada 
+</button>
+ <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="dominadasentado" onclick="vibrate()">
+  dominada sentado
+</button>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <img hidden id="idominada" src="images/espalda.jpg " width='400' height='500'/>
+    </td>
+    <td>
+       <p hidden id="pdominada">Agárrate en pronación a una Barra de Dominadas con las manos a la distancia de los hombros, asegurándote de tener los brazos totalmente rectos y de que los pies no toquen el suelo. Esta es la posición inicial.</p>
+    </td>
+  </tr>
+
+
+
+</tr>
+  <tr>
+    <td>
+      <img hidden id="idominadasentado" src="images/dominadasentado.bmp" width='400' height='500'/>
+    </td>
+    <td>
+       <p hidden id="pdominadasentado">sentado, agárrete a la barra en donde la posicion de las manos sea simetrica, empieza a bajar hasta la altura de los hombros, en turnos por delante de la cabeza y por detras hasta completar doce repeticiones.</p>
+    </td>
+  </tr>
+
+
+
+</table>
+
+<!--tabla de pecho-->
+<table hidden border="1" id="tpecho">
+  <tr>
+    
+      <td colspan="2">
+      <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="pres" onclick="vibrate()">
+  pres
+</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img hidden id="ipres" src="images/pres.bmp" width='400' height='500'/>
+    </td>
+    <td>
+       <p hidden id="ppres">Agárrate en pronación a una Barra de Dominadas con las manos a la distancia de los hombros, asegurándote de tener los brazos totalmente rectos y de que los pies no toquen el suelo. Esta es la posición inicial.</p>
+    </td>
+  </tr>
+</table>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
