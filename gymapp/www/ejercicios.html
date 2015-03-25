@@ -3,28 +3,34 @@
 <html>
 <head>
 	 <script src="lib/jquery-1.11.2.min.js"></script>
-
+   <!--<script src="bootstrap/js/button.js"></script>-->
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>prototipo</title>
+<title>Ejercicios</title>
+
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 
-<!-- Latest compiled and minified CSS -->
+<!-- link de botones -->
+<link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" media="screen" />
+
+<link href="bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" type="text/css" media="screen" />
+<!--
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-<!-- Optional theme -->
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+-->
 </head>
 <body>
 <div id="wrapper">
 	<div id="menu">
 		<ul>
 			<li class="current_page_item"><a href="index.html">Home</a></li>
-			<li><a href="#" onclick="vibrate()">recomendaciones</a></li>
-			<li><a href="#" onclick="vibrate()">ejercicios</a></li>
+			<li><a href="recomendaciones.html" onclick="vibrate()">recomendaciones</a></li>
+			<li><a href="" onclick="vibrate()">ejercicios</a></li>
 			<li><a href="#" onclick="vibrate()">contacto</a></li>
 		</ul>
 	</div>
@@ -38,10 +44,9 @@
 //espalda
 	$(document).ready(function() {
 		 $("#espalda").click(function(){
-      $("#carousel").toggle(200);
-
-                
-            
+      $("#carousel").toggle(200);  
+        $("#tpecho").fadeOut();  
+        $("#tbiceps").fadeOut();   
     }); 
      $("#dominada").click(function(){
          $("#idominada").toggle(200);
@@ -60,14 +65,16 @@
           //oculta dominada
              $("#idominada").fadeOut();
              $("#pdominada").fadeOut();
-             //oculta pecho 
+            
                 
                 
     }); 
 //pecho
        $("#pecho").click(function(){
-
          $("#tpecho").toggle(200);
+          $("#carousel").fadeOut(200);
+          $("#tbiceps").fadeOut();  
+
           
     }); 
           $("#pres").click(function(){
@@ -75,6 +82,19 @@
          $("#ppres").toggle(200);
           
     }); 
+
+//biceps
+      $("#biceps").click(function(){
+               $("#tbiceps").toggle(200);
+                $("#carousel").fadeOut(200);
+                $("#tpecho").fadeOut(200);
+                
+          }); 
+       $("#curl").click(function(){
+               $("#icurl").toggle(200);
+               $("#pcurl").toggle(200);
+                
+          }); 
 
 	});
 
@@ -89,13 +109,16 @@
 <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="pecho" onclick="vibrate()">
   pecho
 </button>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="biceps" onclick="vibrate()">
+  biceps
+</button>
 
 </td>
 </tr>
 
 </table>
 <!--tabla de espalda -->
-<table hidden border="1" id="carousel">
+<table hidden  id="carousel">
   <tr>
     <td colspan="2">
       <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="dominada" onclick="vibrate()">
@@ -127,15 +150,11 @@
        <p hidden id="pdominadasentado">sentado, agárrete a la barra en donde la posicion de las manos sea simetrica, empieza a bajar hasta la altura de los hombros, en turnos por delante de la cabeza y por detras hasta completar doce repeticiones.</p>
     </td>
   </tr>
-
-
-
 </table>
 
 <!--tabla de pecho-->
-<table hidden border="1" id="tpecho">
-  <tr>
-    
+<table hidden  id="tpecho">
+  <tr> 
       <td colspan="2">
       <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="pres" onclick="vibrate()">
   pres
@@ -147,11 +166,33 @@
       <img hidden id="ipres" src="images/pres.bmp" width='400' height='500'/>
     </td>
     <td>
-       <p hidden id="ppres">Agárrate en pronación a una Barra de Dominadas con las manos a la distancia de los hombros, asegurándote de tener los brazos totalmente rectos y de que los pies no toquen el suelo. Esta es la posición inicial.</p>
+       <p hidden id="ppres">se desarrolla apoyando la espalda totalmente en un banco, es necesario que elevemos los pies y los apoyemos en el banco o los mantengamos encogidos durante el desarrollo del ejercicio. Lo mismo que la cabeza que debe permanecer recta y mirando al frente para evitar doblar el cuello y poder dañar la zona cervical. agarra la barra con una apertura superior al ancho de nuestros hombros, los brazos permanecerán fijos en la misma posición subiendo y bajando el peso</p>
     </td>
   </tr>
 </table>
 
+<!--tabla de biceps-->
+<table hidden  id="tbiceps">
+  <tr> 
+      <td colspan="2">
+      <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="curl" onclick="vibrate()">
+  Curl Zottman con mancuernas
+</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img hidden id="icurl" src="images/biceps.png" width='400' height='500'/>
+    </td>
+    <td>
+       <p hidden id="pcurl">Coge un par de mancuernas y agarralas a los lados del cuerpo con las palmas hacia arriba con los pulgares alrededor de las asas para mayor seguridad. Mantén los ojos hacia delante, el pecho erguido y las rodillas ligeramente dobladas.
+Mantén los codos clavados a los lados y simultáneamente eleva las mancuernas hacia ambos hombros como si quisieras hacer un Curl de Martillo.<br>
+Una vez tengas las mancuernas situadas a la altura de los hombros, haz una pausa y aprieta con fuerza los bíceps. A continuación, gira las palmas hasta que las mancuernas queden hacia el lado exterior, sin encararse al cuerpo (postura de pronación).<br>
+Mantén las manos en esta posición y baja lentamente las mancuernas hacia los muslos, sin que se llegue a bloquear o dejarse caer.
+Para y a continuación gira las palmas hacia atrás a la posición inicial de supinación para poder comenzar la siguiente repetición.</p>
+    </td>
+  </tr>
+</table>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
