@@ -44,16 +44,17 @@
 //espalda
 	$(document).ready(function() {
 		 $("#espalda").click(function(){
-      $("#carousel").toggle(200);  
-        $("#tpecho").fadeOut();  
-        $("#tbiceps").fadeOut();   
+        $("#imagen").fadeOut(0);  
+        $("#tpecho").fadeOut(0);  
+        $("#tbiceps").fadeOut(0);   
+         $("#carousel").toggle(200);  
     }); 
      $("#dominada").click(function(){
          $("#idominada").toggle(200);
           $("#pdominada").toggle(200);
           //oculta dominada sentado
-             $("#idominadasentado").fadeOut();
-             $("#pdominadasentado").fadeOut();
+             $("#idominadasentado").fadeOut(0);
+             $("#pdominadasentado").fadeOut(0);
               //oculta pecho 
                 
                  
@@ -63,17 +64,17 @@
          $("#idominadasentado").toggle(200);
           $("#pdominadasentado").toggle(200);
           //oculta dominada
-             $("#idominada").fadeOut();
-             $("#pdominada").fadeOut();
+             $("#idominada").fadeOut(0);
+             $("#pdominada").fadeOut(0);
             
                 
                 
     }); 
 //pecho
        $("#pecho").click(function(){
-         $("#tpecho").toggle(200);
-          $("#carousel").fadeOut(200);
-          $("#tbiceps").fadeOut();  
+          $("#carousel").fadeOut(0);
+          $("#tbiceps").fadeOut(0);  
+          $("#tpecho").toggle(200);
 
           
     }); 
@@ -85,9 +86,10 @@
 
 //biceps
       $("#biceps").click(function(){
+               $("#carousel").fadeOut(0);
+                $("#tpecho").fadeOut(0);
                $("#tbiceps").toggle(200);
-                $("#carousel").fadeOut(200);
-                $("#tpecho").fadeOut(200);
+                
                 
           }); 
        $("#curl").click(function(){
@@ -102,7 +104,7 @@
 
 <table>
 <tr>
-<td>
+<td >
 
 <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="espalda" onclick="vibrate()">
   espalda 
@@ -113,9 +115,38 @@
 <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="biceps" onclick="vibrate()">
   biceps
 </button>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="triceps" onclick="vibrate()">
+  triceps
+</button>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="piernas" onclick="vibrate()">
+  piernas
+</button>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="abdominal" onclick="vibrate()">
+  abdominal
+</button>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="hombros" onclick="vibrate()">
+  hombros
+</button>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="aeróbicos" onclick="vibrate()">
+  aeróbicos
+</button>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="semanal" onclick="vibrate()">
+ejercicios semanales
+</button>
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" id="estiramiento" onclick="vibrate()">
+  estiramientos
+</button>
+
 
 </td>
 </tr>
+
+<!--imagen -->
+    <tr id="imagen">
+        <td>
+            <img src="images/running.jpg"  width='915' height='600'/>
+        </td> 
+    </tr> 
 
 </table>
 <!--tabla de espalda -->
@@ -133,7 +164,7 @@
 
   <tr>
     <td>
-      <img hidden id="idominada" src="images/espalda.jpg " width='400' height='500'/>
+      <img hidden id="idominada" src="images/espalda.jpg" width='400' height='500'/>
     </td>
     <td>
        <p hidden id="pdominada">Agárrate en pronación a una Barra de Dominadas con las manos a la distancia de los hombros, asegurándote de tener los brazos totalmente rectos y de que los pies no toquen el suelo. Esta es la posición inicial.</p>
